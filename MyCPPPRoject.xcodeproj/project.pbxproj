@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A7AA49E9200E0727009CA27F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7AA49E8200E0727009CA27F /* main.cpp */; };
+		A7AA49F1200E08C5009CA27F /* ContentfulClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7AA49EF200E08C5009CA27F /* ContentfulClient.cpp */; };
+		A7AA49F4200E11C4009CA27F /* libcurl.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A7AA49F3200E11C4009CA27F /* libcurl.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +25,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		A7AA49E5200E0727009CA27F /* MyCPPPRoject */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MyCPPPRoject; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7AA49E5200E0727009CA27F /* Contentful.cpp */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Contentful.cpp; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7AA49E8200E0727009CA27F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		A7AA49EF200E08C5009CA27F /* ContentfulClient.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ContentfulClient.cpp; sourceTree = "<group>"; };
+		A7AA49F0200E08C5009CA27F /* ContentfulClient.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ContentfulClient.hpp; sourceTree = "<group>"; };
+		A7AA49F3200E11C4009CA27F /* libcurl.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcurl.tbd; path = usr/lib/libcurl.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7AA49F4200E11C4009CA27F /* libcurl.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,33 +47,44 @@
 		A7AA49DC200E0727009CA27F = {
 			isa = PBXGroup;
 			children = (
-				A7AA49E7200E0727009CA27F /* MyCPPPRoject */,
+				A7AA49E7200E0727009CA27F /* Contentful.cpp */,
 				A7AA49E6200E0727009CA27F /* Products */,
+				A7AA49F2200E11C4009CA27F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		A7AA49E6200E0727009CA27F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A7AA49E5200E0727009CA27F /* MyCPPPRoject */,
+				A7AA49E5200E0727009CA27F /* Contentful.cpp */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A7AA49E7200E0727009CA27F /* MyCPPPRoject */ = {
+		A7AA49E7200E0727009CA27F /* Contentful.cpp */ = {
 			isa = PBXGroup;
 			children = (
 				A7AA49E8200E0727009CA27F /* main.cpp */,
+				A7AA49EF200E08C5009CA27F /* ContentfulClient.cpp */,
+				A7AA49F0200E08C5009CA27F /* ContentfulClient.hpp */,
 			);
-			path = MyCPPPRoject;
+			path = Contentful.cpp;
+			sourceTree = "<group>";
+		};
+		A7AA49F2200E11C4009CA27F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A7AA49F3200E11C4009CA27F /* libcurl.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A7AA49E4200E0727009CA27F /* MyCPPPRoject */ = {
+		A7AA49E4200E0727009CA27F /* Contentful.cpp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A7AA49EC200E0727009CA27F /* Build configuration list for PBXNativeTarget "MyCPPPRoject" */;
+			buildConfigurationList = A7AA49EC200E0727009CA27F /* Build configuration list for PBXNativeTarget "Contentful.cpp" */;
 			buildPhases = (
 				A7AA49E1200E0727009CA27F /* Sources */,
 				A7AA49E2200E0727009CA27F /* Frameworks */,
@@ -77,9 +94,9 @@
 			);
 			dependencies = (
 			);
-			name = MyCPPPRoject;
-			productName = MyCPPPRoject;
-			productReference = A7AA49E5200E0727009CA27F /* MyCPPPRoject */;
+			name = Contentful.cpp;
+			productName = Contentful.cpp;
+			productReference = A7AA49E5200E0727009CA27F /* Contentful.cpp */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -97,7 +114,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A7AA49E0200E0727009CA27F /* Build configuration list for PBXProject "MyCPPPRoject" */;
+			buildConfigurationList = A7AA49E0200E0727009CA27F /* Build configuration list for PBXProject "Contentful.cpp" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -109,7 +126,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A7AA49E4200E0727009CA27F /* MyCPPPRoject */,
+				A7AA49E4200E0727009CA27F /* Contentful.cpp */,
 			);
 		};
 /* End PBXProject section */
@@ -119,6 +136,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7AA49F1200E08C5009CA27F /* ContentfulClient.cpp in Sources */,
 				A7AA49E9200E0727009CA27F /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -248,7 +266,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A7AA49E0200E0727009CA27F /* Build configuration list for PBXProject "MyCPPPRoject" */ = {
+		A7AA49E0200E0727009CA27F /* Build configuration list for PBXProject "Contentful.cpp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A7AA49EA200E0727009CA27F /* Debug */,
@@ -257,7 +275,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A7AA49EC200E0727009CA27F /* Build configuration list for PBXNativeTarget "MyCPPPRoject" */ = {
+		A7AA49EC200E0727009CA27F /* Build configuration list for PBXNativeTarget "Contentful.cpp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A7AA49ED200E0727009CA27F /* Debug */,
