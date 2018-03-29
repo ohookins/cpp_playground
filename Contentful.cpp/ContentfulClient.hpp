@@ -10,7 +10,6 @@
 #define ContentfulClient_hpp
 
 #include <string>
-#include <curl/curl.h>
 
 class ContentfulClient {
 public:
@@ -21,14 +20,6 @@ public:
     void GetEntries(std::string Space);
     
 private:
-    // Internal Curl handle pointer and userdata area for http requests
-    CURL* CurlHandle = nullptr;
-    
-    // Curl data
-    FILE* HeaderData;
-    FILE* BodyData;
-    char ErrorData[CURL_ERROR_SIZE];
-    
     // CDA token
     std::string Token = "";
     

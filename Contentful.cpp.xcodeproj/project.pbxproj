@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		A7AA49E9200E0727009CA27F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7AA49E8200E0727009CA27F /* main.cpp */; };
 		A7AA49F1200E08C5009CA27F /* ContentfulClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7AA49EF200E08C5009CA27F /* ContentfulClient.cpp */; };
-		A7AA49F4200E11C4009CA27F /* libcurl.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A7AA49F3200E11C4009CA27F /* libcurl.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,7 +28,6 @@
 		A7AA49E8200E0727009CA27F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		A7AA49EF200E08C5009CA27F /* ContentfulClient.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ContentfulClient.cpp; sourceTree = "<group>"; };
 		A7AA49F0200E08C5009CA27F /* ContentfulClient.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ContentfulClient.hpp; sourceTree = "<group>"; };
-		A7AA49F3200E11C4009CA27F /* libcurl.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcurl.tbd; path = usr/lib/libcurl.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,7 +35,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7AA49F4200E11C4009CA27F /* libcurl.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,7 +71,6 @@
 		A7AA49F2200E11C4009CA27F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A7AA49F3200E11C4009CA27F /* libcurl.tbd */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -250,16 +246,41 @@
 		A7AA49ED200E0727009CA27F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					/Users/oliver/src/github.com/ohookins/Contentful.cpp/cpr/include,
+					/Users/oliver/src/github.com/ohookins/Contentful.cpp/json/src,
+				);
+				LIBRARY_SEARCH_PATHS = /Users/oliver/src/github.com/ohookins/Contentful.cpp/cpr/lib;
+				"LIBRARY_SEARCH_PATHS[arch=*]" = /Users/oliver/src/github.com/ohookins/Contentful.cpp/cpr/lib;
+				OTHER_LDFLAGS = (
+					"-lcpr",
+					"-lcurl",
+				);
+				"PRELINK_LIBS[arch=*]" = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
 		A7AA49EE200E0727009CA27F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					/Users/oliver/src/github.com/ohookins/Contentful.cpp/cpr/include,
+					/Users/oliver/src/github.com/ohookins/Contentful.cpp/json/src,
+				);
+				LIBRARY_SEARCH_PATHS = /Users/oliver/src/github.com/ohookins/Contentful.cpp/cpr/lib;
+				"LIBRARY_SEARCH_PATHS[arch=*]" = /Users/oliver/src/github.com/ohookins/Contentful.cpp/cpr/lib;
+				OTHER_LDFLAGS = (
+					"-lcpr",
+					"-lcurl",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};
