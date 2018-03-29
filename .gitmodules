@@ -1,6 +1,6 @@
 [submodule "cpr"]
-	path = cpr
+	path = Contentful.cpp/cpr
 	url = git@github.com:whoshuu/cpr.git
 [submodule "json"]
-	path = json
+	path = Contentful.cpp/json
 	url = git@github.com:nlohmann/json.git
