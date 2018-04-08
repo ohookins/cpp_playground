@@ -4,6 +4,7 @@
 class Application {
     public:
         Application();
+        ~Application();
 
         void Run();
 
@@ -17,7 +18,9 @@ class Application {
         uint frameCount = 0;
 
         // SDL stuff
-        SDL_Color* pixels;
-        
-        SDL_Color DrawRandomColorAt(int x, int y, SDL_Renderer* renderer);
+        SDL_Color* pixels = nullptr;
+        SDL_Window* window = nullptr;
+        SDL_Renderer* renderer = nullptr;
+
+        void DrawRandomColorAt(int x, int y);
 };

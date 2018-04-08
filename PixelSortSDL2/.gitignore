@@ -5,3 +5,4 @@ PixelSort
 cmake_install.cmake
 .vscode/
 build/
+*.a
