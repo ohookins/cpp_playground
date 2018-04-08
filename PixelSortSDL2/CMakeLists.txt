@@ -6,4 +6,5 @@ find_package(SDL2 REQUIRED)
 
 add_executable(PixelSort main.cpp)
 add_library(application application.cpp)
-target_link_libraries(PixelSort ${SDL2_LIBRARIES} application)
+add_library(mypixel mypixel.cpp)
+target_link_libraries(PixelSort ${SDL2_LIBRARIES} application mypixel)
