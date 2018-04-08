@@ -3,10 +3,6 @@
 #include <iostream>
 
 Application::Application() {
-    std::cout << "Seeding random number generator and initializing video" << std::endl;
-    std::uniform_int_distribution<std::mt19937::result_type> rand256(0,255);
-    rng.seed(std::random_device()());
-
     // Define size of pixel array
     pixels = new MyPixel*[dimension];
     for (int p = 0; p < dimension; p++) {
@@ -22,7 +18,7 @@ Application::~Application() {
 }
 
 void Application::DrawRandomColorAt(int x, int y) {
-    MyPixel pixel(Uint8(rand256(rng)), Uint8(rand256(rng)), Uint8(rand256(rng)));
+    MyPixel pixel;
 
     SDL_SetRenderDrawColor(renderer, pixel.r, pixel.g, pixel.b, pixel.a);
     SDL_RenderDrawPoint(renderer, x, y);

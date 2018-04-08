@@ -1,17 +1,22 @@
-#include <SDL2/SDL.h>
+#include <random>
 
 class MyPixel {
     public:
-        // TODO: Make private again
-        Uint8 r;
-        Uint8 g;
-        Uint8 b;
-        Uint8 a = 255;
+        MyPixel();
 
-        MyPixel() {};
-        MyPixel(Uint8 r, Uint8 g, Uint8 b);
+        // TODO: Make private again
+        unsigned char r;
+        unsigned char g;
+        unsigned char b;
+        unsigned char a = 255;
 
         float Hue();
 
     private:
+        // Random number generation stuff
+        static std::mt19937 rng;
+        static std::uniform_int_distribution<std::mt19937::result_type> rand360;
+        static bool seeded;
+        
+        static void RandomHue(unsigned char* out_r, unsigned char* out_g, unsigned char* out_b);
 };

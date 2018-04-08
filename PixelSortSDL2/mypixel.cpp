@@ -1,10 +1,74 @@
 #include "mypixel.h"
 #include <cmath>
 
-MyPixel::MyPixel(Uint8 rToSet, Uint8 gToSet, Uint8 bToSet) {
-    r = rToSet;
-    g = gToSet;
-    b = bToSet;
+// Seed random number generator
+std::uniform_int_distribution<std::mt19937::result_type> MyPixel::rand360(0.0,360.0);
+bool MyPixel::seeded = false;
+std::mt19937 MyPixel::rng;
+
+MyPixel::MyPixel() {
+    MyPixel::RandomHue(&r, &g, &b);
+}
+
+void MyPixel::RandomHue(unsigned char* out_r, unsigned char* out_g, unsigned char* out_b) {
+    if (!seeded) {
+        rng.seed(std::random_device()());
+        seeded = true;
+    }
+
+    // Generate random hue. Saturation and value are at full.
+    float hue = MyPixel::rand360(rng);
+    if (hue >= 360.0) { hue = 0.0; }
+    float sat = 1.0;
+    float val = 1.0;
+
+    // Simplified hsv->rgb converter, since we only care about
+    // hue in this program.
+    double ff;
+    long i;
+
+    hue /= 60.0;
+    i = (long)hue;
+    ff = hue - i;
+    float _r, _g, _b;
+
+    switch(i) {
+    case 0:
+        _r = val;
+        _g = -ff;
+        _b = 0.0;
+        break;
+    case 1:
+        _r = 1.0 - ff;
+        _g = val;
+        _b = 0.0;
+        break;
+    case 2:
+        _r = 0.0;
+        _g = val;
+        _b = -ff;
+        break;
+    case 3:
+        _r = 0.0;
+        _g = 1.0 - ff;
+        _b = val;
+        break;
+    case 4:
+        _r = -ff;
+        _g = 0.0;
+        _b = val;
+        break;
+    case 5:
+    default:
+        _r = val;
+        _g = 0.0;
+        _b = 1.0 - ff;
+        break;
+    }
+
+    *out_r = (unsigned char)(255 * _r);
+    *out_g = (unsigned char)(255 * _g);
+    *out_b = (unsigned char)(255 * _b);
 }
 
 float MyPixel::Hue() {
